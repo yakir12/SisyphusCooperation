@@ -13,7 +13,13 @@ Both entry points require a new version of Julia installed (see [here](https://j
 ## How to use
 1. Download this repository.
 2. Start a new Julia REPL inside the downloaded folder. One way to accomplish this is with `cd("<path>")` where `<path>` is the path to the downloaded `SisyphusCooperation` folder. For instance, if you've downloaded this git-repository to your home directory, then `cd(joinpath(homedir(), "SisyphusCooperation"))` should work.
-3. Simply run the `main.jl`-file with:
+3. Activate and instantiate that repository. Press closing square bracket, `]`, once to enter `Pkg` mode and type:
+   ```julia
+   activate
+   instantiate
+   ```
+   While activating is required in every new Julia session, you won't need to instantiate again. Leave `Pkg` mode by pressing back-space.
+3. Simply run the `entrypoint1.jl`-file with:
    ```julia
    include("entrypoint1.jl")
    ```
