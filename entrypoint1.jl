@@ -3,7 +3,7 @@ using Autotrack, VideoIO, CSV, DataFramesMeta, Dierckx, StaticArrays, CameraCali
 using ThreadsX
 
 #
-debug = false
+debug = false # set to true if you want to save video snippets of the tracked beetles. This helps assesing the quality of the auto-tracking.
 checker = 4.1 # in cm
 
 include("utils.jl")
