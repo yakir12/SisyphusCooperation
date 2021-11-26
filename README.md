@@ -27,9 +27,10 @@ If this did not work, try the next section.
 ## Troubleshooting
 Start a new Julia REPL (e.g. by double-clicking the Julia icon), and copy-paste:
 ```julia
-import LibGit2
+import LibGit2, Pkg
 mktempdir() do path
-  LibGit2.clone("https://github.com/yakir12/ant_navigation", path) 
+  LibGit2.clone("https://github.com/yakir12/SisyphusCooperation", path) 
+  Pkg.activate(path)
   include(joinpath(path, "entrypoint2.jl"))
 end
 ```
