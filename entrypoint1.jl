@@ -18,7 +18,7 @@ df = DataFrame(CSV.File(artifact"SisyphusCooperation/rawdata/csvs/runs.csv", typ
 df = innerjoin(df, calibs, on = "calibration_ID")
 select!(df, Not("calibration_ID"))
 
-df.track = ThreadsX.map((i, row) -> get_track(i, row...), pairs(eachrow(select(df, [:file, :start, :stop, :calibration]))));
+df.track = ThreadsX.map(irow -> get_track(first(irow), last(irow)...), pairs(eachrow(select(df, [:file, :start, :stop, :calibration]))));
 @rselect!(df, :duration = tosecond(:stop - :start), :species, $"couple ID", $"with female", $"exit azimuth", :IDs, :track)
 
 @rtransform!(df, :cordlength = norm(:track(:duration) - :track(0)), :curvelength = get_curvelength(:duration, :track))
