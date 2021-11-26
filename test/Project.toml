@@ -1,0 +1,8 @@
+[deps]
+Autotrack = "f38f9ce9-c16b-4d5e-a569-b4b8028c75eb"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+Dierckx = "39dd38d3-220a-591b-8e3c-4c3a8c710a94"
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+VideoIO = "d6d074c3-1acf-5d4c-9a43-ef38773959a2"
