@@ -1,6 +1,6 @@
 import Pkg
 Pkg.activate(".")
-Pkg.add(url = "https://github.com/yakir12/Autotrack.jl")
+Pkg.add(url = "https://github.com/yakir12/Autotrack.jl", rev = "master")
 Pkg.instantiate()
 
 using Dates, LinearAlgebra, LazyArtifacts
