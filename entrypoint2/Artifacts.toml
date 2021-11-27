@@ -1,0 +1,7 @@
+[SisyphusCooperation]
+git-tree-sha1 = "5a6b66fef6ae39b911b9e235c895806520265751"
+lazy = true
+
+    [[SisyphusCooperation.download]]
+    sha256 = "c532a64f23a9722815200d890acf71aa9b4cd0b6841008bda7a30cc45c4cd912"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/processeddata.tar.gz"

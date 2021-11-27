@@ -1,4 +1,4 @@
-artifacts
-results
-wme
+artifacts/
+results/
+wme/
 sketch.jl

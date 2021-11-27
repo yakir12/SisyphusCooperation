@@ -1,3 +1,8 @@
+import Pkg
+Pkg.activate(".")
+Pkg.add(url = "https://github.com/yakir12/Autotrack.jl")
+Pkg.instantiate()
+
 using Dates, LinearAlgebra, LazyArtifacts
 using Autotrack, VideoIO, CSV, DataFramesMeta, Dierckx, StaticArrays, CameraCalibrations
 using ThreadsX
