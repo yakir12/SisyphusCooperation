@@ -31,12 +31,3 @@ df.track = ThreadsX.map(irow -> get_track(first(irow), last(irow)...), pairs(eac
 
 mkpath("results")
 CSV.write(joinpath("results", "data.csv"), df)
-
-using GLMakie
-fig = Figure()
-ax = Axis(fig[1,1], aspect = DataAspect())
-@eachrow df begin
-  xy = :track.(range(0, :duration, 25))
-  lines!(ax, xy)
-end
-
