@@ -2,7 +2,7 @@ import Pkg
 Pkg.activate(".")
 Pkg.instantiate()
 
-using Dates, LinearAlgebra, LazyArtifacts
+using Dates, LinearAlgebra, LazyArtifacts, Statistics
 using CSV, DataFramesMeta, GLMakie, AlgebraOfGraphics
 
 n = 5
@@ -32,3 +32,18 @@ for (k, g) in pairs(groupby(df, :species)), (y, datalimits) in zip((:speed, :tor
     f = draw(toplot; axis)
     save(joinpath("results", string(k..., " ", y, ".png")), f)
 end
+
+
+# accuracy as vector length
+df = CSV.read(artifact"SisyphusCooperation/processeddata/csvs/data.csv", DataFrame; types = Dict("with female" => Bool))
+degree2vector(α) = [reverse(sincosd(α))...]
+g = groupby(df, ["species", "couple ID", "with female"])
+x = @combine(g, :accuracy = norm(mean(degree2vector.($"exit azimuth"))))
+g = groupby(x, ["species", "couple ID"])
+x = @combine(g, :line = Ref(Point2.($"with female", :accuracy)))
+mkpath("results")
+for (k, x1) in pairs(groupby(x, :species))
+  fig = draw(mapping(x1.line, layout=x1."couple ID") * visual(Lines), axis = (; ylabel = "vector length", xticklabelrotation = π/2, xticks = ([0, 1], ["solo", "couple"])))
+  save(joinpath("results", string(k..., " accuracy.png")), fig)
+end
+
