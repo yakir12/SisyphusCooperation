@@ -47,13 +47,8 @@ for (k, x1) in pairs(groupby(x, :species))
   save(joinpath("results", string(k..., " accuracy.png")), fig)
 end
 
-fig = Figure()
-for (i, (k, x1)) in enumerate(pairs(groupby(x, :species)))
-    ax = Axis(fig[1, i], title = string(k...), ylabel = "vector length", xticklabelrotation = π/2, xticks = ([0, 1], ["solo", "couple"]))
-    for l in x1.line
-        lines!(ax, l)
-    end
-end
 
-linkaxis!(fig.layout...)
+layers = mapping(x.line, layout=x.species) * visual(ScatterLines);
+fig = draw(layers, axis = (; limits = (nothing, (0.8, nothing)), ylabel = "vector length", xticklabelrotation = π/2, xticks = ([0, 1], ["solo", "couple"])))
+
 
