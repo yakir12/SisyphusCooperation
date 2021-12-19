@@ -43,7 +43,7 @@ rownumber = 10 # run number
 # get the runs
 df = get_runs()
 # get the specific `rownumber` run 
-file, start_time, stop_time, guess = df[rownumber, [:file, :start_time, :stop_time, :guess]]
+file, start_time, stop_time, guess = df[rownumber, [:file, :start, :stop, :guess]]
 # process it
 get_track(rownumber, file, start_time, stop_time, guess)
 # now check to see if your changes helped
