@@ -50,5 +50,6 @@ end
 
 layers = mapping(x.line, layout=x.species) * visual(ScatterLines);
 fig = draw(layers, axis = (; limits = (nothing, (0.8, nothing)), ylabel = "vector length", xticklabelrotation = π/2, xticks = ([0, 1], ["solo", "couple"])))
+save(joinpath("results", "accuracy.png"), fig)
 
 

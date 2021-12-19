@@ -8,15 +8,15 @@ export track
 
 # include("video.jl")
 
-window_radius = 4
-nframes = 25 # data points
-σ = 0.85
-smoothing_factor = 200
+const window_radius = 4
+const nframes = 25 # data points
+const σ = 0.85
+const smoothing_factor = 200
 # sz = (108, 144)
-scale = 10
+const scale = 10
 
 w = CartesianIndex(window_radius, window_radius)
-window = -w:w
+const window = -w:w
 
 # _parse_time(::Nothing, T) = 0.0
 # _parse_time(x, T) = Millisecond(T(parse(Int, x)))/Millisecond(Second(1))
@@ -70,19 +70,18 @@ function get_imgs(vid, ts)
   return sz, imgs, bkgd
 end
 
-function get_spline(sz, imgs, bkgd, ts)
-  guess = CartesianIndex(sz .÷ 2)
+function get_spline(imgs, bkgd, ts, guess)
   coords = accumulate((guess, img) -> get_next(guess, img, bkgd), imgs, init = guess)
   ParametricSpline(ts, hcat(SV.(Tuple.(coords))...); s = smoothing_factor, k = 2)
 end
 
-function track(start_file, start_time, stop_file, stop_time; debug = nothing)
+function track(start_file, start_time, stop_file, stop_time; debug = nothing, guess = nothing)
 
   if start_file == stop_file
     vid = VideoIO.openvideo(start_file, target_format=VideoIO.AV_PIX_FMT_GRAY8)
     ts = range(start_time, stop_time, length = nframes)
     sz, imgs, bkgd = get_imgs(vid, ts)
-    spl = get_spline(sz, imgs, bkgd, ts)
+    spl = get_spline(imgs, bkgd, ts, isnothing(guess) ? CartesianIndex(sz .÷ 2) : CartesianIndex(guess .÷ scale))
   else
     @error "waaaat"
   end

@@ -12,7 +12,7 @@ end
 tosecond(x::Nanosecond) = Dates.tons(x)*1e-9
 tosecond(x::Time) = tosecond(x - Time(0))
 
-function get_track(rownumber, file, start_time, stop_time, calibration)
+function get_track(rownumber, file, start_time, stop_time, calibration, debug)
 
   file = joinpath(artifact"SisyphusCooperation/rawdata/videos", file)
   t₀ = get_start_time(file)
