@@ -32,6 +32,7 @@ df = get_runs()
 # delete all the previous videos
 rm.(readdir("vids", join = true))
 
+mkpath("vids")
 # process all the runs
 ThreadsX.map(irow -> get_track(irow...), eachrow(select(df, [:rownumber, :file, :start, :stop, :guess])));
 
