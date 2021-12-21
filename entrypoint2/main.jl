@@ -5,9 +5,9 @@ Pkg.instantiate()
 using Dates, LinearAlgebra, LazyArtifacts, Statistics
 using CSV, DataFramesMeta, GLMakie, AlgebraOfGraphics
 
-n = 5
-df = DataFrame(g = 1:n, xy = [[Point2(rand(2)) for _ in 1:2] for _ in 1:n])
-fig = draw(mapping(df.xy, layout=df.g => nonnumeric) * visual(Lines))
+# n = 5
+# df = DataFrame(g = 1:n, xy = [[Point2(rand(2)) for _ in 1:2] for _ in 1:n])
+# fig = draw(mapping(df.xy, layout=df.g => nonnumeric) * visual(Lines))
 
 df = DataFrame(CSV.File(artifact"SisyphusCooperation/processeddata/csvs/data.csv"))
 g = groupby(df, ["species", "couple ID", "with female"])
@@ -24,6 +24,7 @@ for (k, x1) in pairs(groupby(x,:species))
     save(joinpath("results", string(k..., " speed per couple.png")), f)
 end
 
+# make figure per male
 
 
 axis = (width = 225, height = 225)

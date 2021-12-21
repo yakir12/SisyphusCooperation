@@ -14,12 +14,12 @@ parse_conf!(conf)
 include("utils.jl")
 include("calibrations.jl")
 
-calibs = DataFrame(CSV.File(artifact"SisyphusCooperation/rawdata/csvs/calibrations.csv"))
+calibs = CSV.read(artifact"SisyphusCooperation/rawdata/csvs/calibrations.csv", DataFrame)
 
 @rtransform!(calibs, :extrinsic = tosecond(:extrinsic), :file = joinpath(artifact"SisyphusCooperation/rawdata/videos", :calibration_ID))
 @select!(calibs, :calibration_ID, :calibration = time2calib.(:file, :extrinsic))
 
-df = DataFrame(CSV.File(artifact"SisyphusCooperation/rawdata/csvs/runs.csv", types = Dict("start" => Time, "stop" => Time)))
+df = CSV.read(artifact"SisyphusCooperation/rawdata/csvs/runs.csv", DataFrame, types = Dict("start" => Time, "stop" => Time))
 df = innerjoin(df, calibs, on = "calibration_ID")
 select!(df, Not("calibration_ID"))
 
@@ -38,13 +38,18 @@ df.track .= tracks
 # df.track = tcollect(withprogress(get_track(first(irow), last(irow)...) for irow in pairs(eachrow(select(df, [:file, :start, :stop, :calibration])))); basesize = 1);
 
 
-@rselect!(df, :duration = tosecond(:stop - :start), :species, $"couple ID", $"with female", $"exit azimuth", :IDs, :track)
+@rtransform!(df, :duration = tosecond(:stop - :start))#, :species, $"couple ID", $"with female", $"exit azimuth", :IDs, :track)
+
+histogram(df.duration)
+
 
 ratio = retrieve(conf, "proportion_of_shortest", "ratio", Float64)
 temporalROI = round(Int, ratio*minimum(df.duration))
 
 @rtransform!(df, :cordlength = cordlength(:track, :duration, temporalROI), :curvelength = get_curvelength(:track, :duration, temporalROI))
 @transform!(df, :tortuosity = :cordlength ./ :curvelength, :speed = :curvelength / temporalROI)
+
+@select!(df, Not(things))
 
 mkpath("results")
 CSV.write(joinpath("results", "data.csv"), df)
