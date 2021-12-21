@@ -83,7 +83,7 @@ function track(start_file, start_time, stop_file, stop_time; debug = nothing, gu
     sz, imgs, bkgd = get_imgs(vid, ts)
     spl = get_spline(imgs, bkgd, ts, isnothing(guess) ? CartesianIndex(sz .÷ 2) : CartesianIndex(guess .÷ scale))
   else
-    @error "waaaat"
+    @error "Currently supports start and stop times in the same single video file"
   end
 
   ar = VideoIO.aspect_ratio(vid)

@@ -151,7 +151,7 @@ file,start,stop,species,couple ID,with female,exit azimuth,IDs,calibration_ID,ro
 20191212_A.MTS,00:22:14.075,00:22:35.953,fasciculatus,8f,false,310,drager_2b,20191212_C.MTS,150,,
 20191212_A.MTS,00:22:42.974,00:23:02.329,fasciculatus,8f,false,350,drager_2b,20191212_C.MTS,151,,
 20191212_A.MTS,00:23:08.356,00:23:29.782,fasciculatus,8f,false,335,drager_2b,20191212_C.MTS,152,,
-20191212_A.MTS,00:12:32.363,00:23:57.867,fasciculatus,8f,false,320,drager_2b,20191212_C.MTS,153,,
+20191212_A.MTS,00:22:32.363,00:23:57.867,fasciculatus,8f,false,320,drager_2b,20191212_C.MTS,153,,
 20191212_A.MTS,00:24:05.706,00:24:33.692,fasciculatus,8f,false,310,drager_2b,20191212_C.MTS,154,,
 20191212_A.MTS,00:24:40.271,00:24:58.358,fasciculatus,8f,false,285,drager_2b,20191212_C.MTS,155,,
 20191212_A.MTS,00:25:05.829,00:25:34.184,fasciculatus,8f,false,320,drager_2b,20191212_C.MTS,156,,
