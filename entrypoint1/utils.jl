@@ -1,6 +1,6 @@
 function get_start_time(file)
-  txt = read(`$(VideoIO.FFMPEG.ffprobe()) -v error -show_entries format=start_time -of default=noprint_wrappers=1:nokey=1 $file`, String)
-  parse(Float64, txt) # in float seconds
+    txt = read(`$(VideoIO.FFMPEG.ffprobe()) -v error -show_entries format=start_time -of default=noprint_wrappers=1:nokey=1 $file`, String)
+    parse(Float64, txt) # in float seconds
 end
 
 # VideoIO.FFMPEG.ffprobe() do exe
@@ -12,29 +12,38 @@ end
 tosecond(x::Nanosecond) = Dates.tons(x)*1e-9
 tosecond(x::Time) = tosecond(x - Time(0))
 
-function get_track(rownumber, file, start_time, stop_time, calibration, debug)
+function get_track(rownumber, file, start_time, stop_time, calibration)
 
-  file = joinpath(artifact"SisyphusCooperation/rawdata/videos", file)
-  t₀ = get_start_time(file)
-  start_time = tosecond(start_time) + t₀
-  stop_time = tosecond(stop_time) + t₀
+    file = joinpath(artifact"SisyphusCooperation/rawdata/videos", file)
+    t₀ = get_start_time(file)
+    start_time = tosecond(start_time) + t₀
+    stop_time = tosecond(stop_time) + t₀
 
-  t1, t2, spl, ar = track(file, start_time, file, stop_time; debug = debug ? joinpath(pwd(), string(rownumber)) : nothing)
+    debug = retrieve(conf, "videotrack", "debug", Bool)
+    t1, t2, spl, ar = track(file, start_time, file, stop_time; debug = debug ? joinpath(pwd(), string(rownumber)) : nothing)
 
-  c = calibrate(calibration, SVector{2, Float64}(ar .* spl(t1)))
-  fun(t) = SVector{2, Float64}(calibrate(calibration, SVector{2, Float64}(ar .* spl(t + t1))) .- c)
+    c = calibrate(calibration, SVector{2, Float64}(ar .* spl(t1)))
+    fun(t) = SVector{2, Float64}(calibrate(calibration, SVector{2, Float64}(ar .* spl(t + t1))) .- c)
 
-  return fun
+    return fun
 
 end
 
-function get_curvelength(duration, track)
-  ts = range(0, duration, length = 1000)
-  sp0 = reduce(ts, init = (s = 0.0, p0 = track(0))) do sp0, t
-    p1 = track(t)
-    (s = sp0.s + norm(p1 - sp0.p0), p0 = p1)
-  end
-  return sp0.s
+function cordlength(track, duration, temporalROI)
+    Δ = duration - temporalROI
+    ts = Δ/2 .+ [0, temporalROI]
+    norm(diff(track.(ts)))
+end
+
+function get_curvelength(track, duration, temporalROI)
+    Δ = duration - temporalROI
+    t1, t2 = Δ/2 .+ [0, temporalROI]
+    ts = range(t1, t2, length = 1000)
+    sp0 = reduce(ts, init = (s = 0.0, p0 = track(t1))) do sp0, t
+        p1 = track(t)
+        (s = sp0.s + norm(p1 - sp0.p0), p0 = p1)
+    end
+    return sp0.s
 end
 
 

@@ -1,6 +1,7 @@
-function time2calib(video, extrinsic, checker)
+function time2calib(video, extrinsic)
   mktempdir() do path
     extrinsic = extract(video, extrinsic, path)
+    checker = retrieve(conf, "checker", "width", Float64)
     buildcalibration(checker, extrinsic)
   end
 end
