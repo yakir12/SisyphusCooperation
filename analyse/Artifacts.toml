@@ -1,0 +1,239 @@
+[20191211_C]
+git-tree-sha1 = "41f9b2eae0f3508cd6ceea63db4a5b13301c792d"
+lazy = true
+
+    [[20191211_C.download]]
+    sha256 = "0b35a03e564355ea661ffeeb7066eb045faff732b2dfe0e01fa21831978b7d7f"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191211_C.MTS.tar.gz"
+
+[20191211_D]
+git-tree-sha1 = "697c1029dd4d0cafc895829d6fbcbe69ed6909ac"
+lazy = true
+
+    [[20191211_D.download]]
+    sha256 = "7e59a1062fd314c86bcdfa95d118d34cc72ac3ba8363b53214df6a814edae742"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191211_D.MTS.tar.gz"
+
+[20191211_E]
+git-tree-sha1 = "667e1e1e91f365055015065d51557655f180a7c4"
+lazy = true
+
+    [[20191211_E.download]]
+    sha256 = "f6e3d6b21614343b8e8036b7485a164a42c38b63aa766cf21722657ded507fcd"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191211_E.MTS.tar.gz"
+
+[20191212_A]
+git-tree-sha1 = "8091a652a2fba7876017295cb5452d2aef604c77"
+lazy = true
+
+    [[20191212_A.download]]
+    sha256 = "2e9165f116716c0a80fc5da8cdabac242a90b16779f4a8a863e073089ec6b192"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_A.MTS.tar.gz"
+
+[20191212_B]
+git-tree-sha1 = "2515cd8d69372107e83c4e1e4b1f5d60039bff5b"
+lazy = true
+
+    [[20191212_B.download]]
+    sha256 = "395c496057e3c7e6d4357bb490307f2d0b957c9385176f8ee06a9f5e3c488594"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_B.MTS.tar.gz"
+
+[20191212_C]
+git-tree-sha1 = "3be85f99058d53547a4a6d724df423bad14a75ff"
+lazy = true
+
+    [[20191212_C.download]]
+    sha256 = "d7b91f808d16d3c5370f9d55dbb068ba56def0f31a721162b569222d74053275"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_C.MTS.tar.gz"
+
+[20191212_D]
+git-tree-sha1 = "7fceb69a3842c3c361de19d2b4ba00035d15bcc6"
+lazy = true
+
+    [[20191212_D.download]]
+    sha256 = "b1385c5afed5a0bc1ad4da356a24821fb5d68a2d19dd397ca620e118d22d361f"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_D.MTS.tar.gz"
+
+[20191212_E]
+git-tree-sha1 = "ab9d6103e6d2f38adf85bc589f559b0875b9fe2d"
+lazy = true
+
+    [[20191212_E.download]]
+    sha256 = "366c81340e6e5dcbd05b6f8eb6a9231554d1863d8833941635bb6ec8f291595d"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_E.MTS.tar.gz"
+
+[20191212_F]
+git-tree-sha1 = "241ea00e92241215d27dab288ff0a14ea2fcce9c"
+lazy = true
+
+    [[20191212_F.download]]
+    sha256 = "ff11914e5a375f5443cf5f09a874072ba481ea4ade687023e4fb2d4386be9165"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191212_F.MTS.tar.gz"
+
+[20191215_A]
+git-tree-sha1 = "c2190671ad7174ea2b30ff1d6e2cdfc26daf854f"
+lazy = true
+
+    [[20191215_A.download]]
+    sha256 = "335ddf2bce946f792bcb2d226c6d890fee4cb0cccd0f6bde49850175091a0462"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191215_A.MTS.tar.gz"
+
+[20191215_B]
+git-tree-sha1 = "0a0e03b6071c1c8c9316197e89dcec2f8dc57277"
+lazy = true
+
+    [[20191215_B.download]]
+    sha256 = "02a8893104c94aafa073eb3f411f11b7483e0e579922ad7b8d0be064e2f08a02"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191215_B.MTS.tar.gz"
+
+[20191215_C]
+git-tree-sha1 = "3f033dbcee57ac4330105bfb7b51c62560fa3319"
+lazy = true
+
+    [[20191215_C.download]]
+    sha256 = "d8eff133d982f787bc4175d0520812613969ec3c00f3073c39ad2e09028f25dd"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191215_C.MTS.tar.gz"
+
+[20191218_A]
+git-tree-sha1 = "ecc23852bea74f6cd5ce9bf74508b0de818756a0"
+lazy = true
+
+    [[20191218_A.download]]
+    sha256 = "3a4fc969f5f74d7dd1399cdb39124b057c116628fd2c0b0f68e3054bd21bb9bb"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191218_A.MTS.tar.gz"
+
+[20191218_B]
+git-tree-sha1 = "239cbe9f19870b150277b779f6265e8c4501a592"
+lazy = true
+
+    [[20191218_B.download]]
+    sha256 = "a258b743aa59b262c73ac4c938e466d0f1f7651e3aa112d69759494e132d7199"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191218_B.MTS.tar.gz"
+
+[20191218_C]
+git-tree-sha1 = "b71fce182aea88adaf660cf3e61077d2991d0154"
+lazy = true
+
+    [[20191218_C.download]]
+    sha256 = "3061d0c35c5108d8a30b6746e9a89d448b5d5212edcd2f1b1dc191873f28f6ee"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20191218_C.MTS.tar.gz"
+
+[20210704_A]
+git-tree-sha1 = "89685ea5469f07276752b164245c3952ce9eb16c"
+lazy = true
+
+    [[20210704_A.download]]
+    sha256 = "3ae8f9d8737900094e0a7bb8f20b9f564f72381faa575e49448055a78470ebab"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210704_A.MTS.tar.gz"
+
+[20210704_B]
+git-tree-sha1 = "bee163cab115b1027ae3236a274c32b6f91e77ae"
+lazy = true
+
+    [[20210704_B.download]]
+    sha256 = "956d8e3d7244c63d843f4ea4c106f59cb637961a68c18479e32c820a1738048f"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210704_B.MTS.tar.gz"
+
+[20210704_C]
+git-tree-sha1 = "ead34f1dc3020ab4a68467ca4e56ec8b163a1827"
+lazy = true
+
+    [[20210704_C.download]]
+    sha256 = "94a7fcb9f700e3b4eab32692ccb9d7c67d067a54e877cf7f86c4d2befbfe7bbe"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210704_C.MTS.tar.gz"
+
+[20210705_A]
+git-tree-sha1 = "414c9393ba84f24c12134df2af3dc82b141507b1"
+lazy = true
+
+    [[20210705_A.download]]
+    sha256 = "2f8a6495dd0aa0b66373614d2d9e071130c0c377bf01f8257afe3e580deb6cce"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210705_A.MTS.tar.gz"
+
+[20210709_A]
+git-tree-sha1 = "cd11cbc76bd8f52334edbf3b15d0da7617b644f0"
+lazy = true
+
+    [[20210709_A.download]]
+    sha256 = "b1d075270ad0007d94f409ff760081f5280003b874f5bfe793a08a1622d1ba1e"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210709_A.MTS.tar.gz"
+
+[20210710_A]
+git-tree-sha1 = "4370c71bc55cbb84559b6579ff10920d3ff3091b"
+lazy = true
+
+    [[20210710_A.download]]
+    sha256 = "227b927eb0827d51b8e118710b8c1efd7d210ec8338821e741f87700adcca59c"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_A.MTS.tar.gz"
+
+[20210710_B]
+git-tree-sha1 = "7118b8630cd3b98686202beaef85e93956ef1bf1"
+lazy = true
+
+    [[20210710_B.download]]
+    sha256 = "f6602cceab4dd2119ca1a78dc9d61607f3bfe193a1bc2c8bededd0445e085de2"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_B.MTS.tar.gz"
+
+[20210710_C]
+git-tree-sha1 = "3f14c1b8268373c42f064ba06db13b037df7fdc4"
+lazy = true
+
+    [[20210710_C.download]]
+    sha256 = "b2d50d73296e5fc3288867cd9bd524adc5f60d4b3d5ac0e1538311b6c1236ed3"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_C.MTS.tar.gz"
+
+[20210710_D]
+git-tree-sha1 = "419f50dd743142f0db0e12a914c30dcc202c03ff"
+lazy = true
+
+    [[20210710_D.download]]
+    sha256 = "a62c3f9a780fa3214216df0b0ac1d3e69aef58432f167f631e96aa8de7248bce"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_D.MTS.tar.gz"
+
+[20210710_E]
+git-tree-sha1 = "3ee53406a7b89e05ab74d85606e6319b571aee92"
+lazy = true
+
+    [[20210710_E.download]]
+    sha256 = "d0814b681aab1c01c17b490707a6a1e4f5a6559d139768455cc5245cc70ed1d1"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_E.MTS.tar.gz"
+
+[20210710_F]
+git-tree-sha1 = "fd70091e7e0a14dbd73c49653387feeff8b6f340"
+lazy = true
+
+    [[20210710_F.download]]
+    sha256 = "e326eb5bfa95c000a2fd12ad08e3d102d6c18656d73338f69ca09e3a782bb4d1"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210710_F.MTS.tar.gz"
+
+[20210711_A]
+git-tree-sha1 = "1f74dfb01931dc0b6c2912b06078b292f2d741d9"
+lazy = true
+
+    [[20210711_A.download]]
+    sha256 = "4321d52bde2bf9fc1aa71bcabe359e078e1e5ef92a6f1e0284700b68ba805046"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/20210711_A.MTS.tar.gz"
+
+[calibrations]
+git-tree-sha1 = "84ab5c9cd8fbbf6581601d9bb4aa0b13e5c13e4e"
+lazy = true
+
+    [[calibrations.download]]
+    sha256 = "6aac402337c4dbfaf64249b7d456ce6849b2be9bc458dcd3b700bafe1bf92057"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/calibrations.csv.tar.gz"
+
+[runs]
+git-tree-sha1 = "7f9e3c12dddaced08e9cf0531d3304480e862c4e"
+lazy = true
+
+    [[runs.download]]
+    sha256 = "f0690d9549a09fb136aac8d1ea157000e920e876abb9ec569dd72bbc5c74890b"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/runs.csv.tar.gz"
+
+[tracks]
+git-tree-sha1 = "0681e955f45486e9fc2fa457bcf1f905c47f783f"
+lazy = true
+
+    [[tracks.download]]
+    sha256 = "90f58bbf86d7e900eb44d9c85f69018c59c1f7d05f81c043dd17c1cd35f4f775"
+    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/tracks.tar.gz"

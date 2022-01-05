@@ -1,7 +1,0 @@
-[SisyphusCooperation]
-git-tree-sha1 = "00174fb69d578de8c293bf8e0c452fe3263d1521"
-lazy = true
-
-    [[SisyphusCooperation.download]]
-    sha256 = "a575ed302251e5446af10a2ba140c419a743340a1ed074264ca2de5859b3de48"
-    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/rawdata.tar.gz"
