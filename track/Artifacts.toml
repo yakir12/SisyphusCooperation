@@ -229,11 +229,3 @@ lazy = true
     [[runs.download]]
     sha256 = "f0690d9549a09fb136aac8d1ea157000e920e876abb9ec569dd72bbc5c74890b"
     url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/runs.csv.tar.gz"
-
-[tracks]
-git-tree-sha1 = "0681e955f45486e9fc2fa457bcf1f905c47f783f"
-lazy = true
-
-    [[tracks.download]]
-    sha256 = "90f58bbf86d7e900eb44d9c85f69018c59c1f7d05f81c043dd17c1cd35f4f775"
-    url = "https://s3.eu-central-1.amazonaws.com/vision-group-file-sharing/Data%20backup%20and%20storage/Claudia/SisyphusCooperation/tracks.tar.gz"

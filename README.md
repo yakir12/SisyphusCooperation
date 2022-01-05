@@ -16,6 +16,9 @@ Both entry points require Julia to be installed (see [here](https://julialang.or
 3. Run the `main.jl` file (e.g. `include("main.jl")` in the REPL).
 4. All the track, figures, and statistics have been generated in the `results` folder.
 
+## Configuration
+Configurations are stored and editable in the `configuration.ini` files in each of the entry points. The variables are set to reasonable values, but you can change the defaults in those files.
+
 ## Troubleshooting
 Start a new Julia REPL (e.g. by double-clicking the Julia icon), and copy-paste:
 ```julia
