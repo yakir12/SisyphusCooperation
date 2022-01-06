@@ -2,6 +2,7 @@ using Test
 using Dates, LinearAlgebra
 using Autotrack, VideoIO, CSV, QuadGK, Dierckx
 using GLMakie
+using LazyArtifacts
 
 include(joinpath("..", "track", "utils.jl"))
 

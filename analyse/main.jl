@@ -21,7 +21,10 @@ select!(df, Not(:rownumber))
 results = joinpath("..", "results")
 select(df, Not(Cols(:xyt))) |> CSV.write(joinpath(results, "data.csv"))
 
-# plotting
+# Statistics
+using MixedModels
+
+# Plotting
 
 fig = Figure()
 ax = Axis(fig[1,1], aspect = DataAspect(), xlabel = "X (cm)", ylabel = "Y (cm)")
