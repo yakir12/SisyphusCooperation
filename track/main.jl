@@ -14,10 +14,7 @@ include("utils.jl")
 include("calibrations.jl")
 
 df = CSV.read(artjoin("runs.csv"), DataFrame, types = Dict("start" => Time, "stop" => Time))
-if !all(artifact_downloaded, df.file)
-  @info "Downloading all the raw data. This will take some time…"
-  foreach(artjoin, df.file)
-end
+foreach(artjoin, df.file)
 
 calibs = CSV.read(artjoin("calibrations.csv"), DataFrame)
 @rtransform!(calibs, :extrinsic = tosecond(:extrinsic), :file = artjoin(:calibration_ID))
@@ -26,7 +23,7 @@ calibs = CSV.read(artjoin("calibrations.csv"), DataFrame)
 df = innerjoin(df, calibs, on = "calibration_ID")
 select!(df, Not("calibration_ID"))
 @rtransform!(df, :duration = tosecond(:stop - :start))
-
+@rtransform!(df, :guess = ismissing(:dropoffx) ? nothing : tuple(:dropoffx, :dropoffy))
 
 @info "Tracking videos. This will take some time…"
 results = joinpath("..", "results")
@@ -34,32 +31,16 @@ tracks = joinpath(results, "tracks")
 mkpath(tracks)
 n = nrow(df)
 p = Progress(n)
-# tracks = Vector{Any}(undef, n)
-# Threads.@threads for rownumber in 1:n
 Threads.@threads for row in eachrow(df)
-  # file, start, stop, calibration = df[rownumber, [:file, :start, :stop, :calibration]]
-  # track = get_track(rownumber, file, start, stop, calibration)
-  track = get_track(row.rownumber, row.file, row.start, row.stop, row.calibration)
+  track = get_track(row.rownumber, row.file, row.start, row.stop, row.calibration, row.guess)
   t = range(0, row.duration, 1000)
   xy = track.(t)
   (t = t, x = first.(xy), y = last.(xy)) |> CSV.write(joinpath(tracks, string(row.rownumber, ".csv")))
   next!(p)
 end
 
-#
-#
-#   tracks[rownumber] = get_track(rownumber, file, start, stop, calibration)
-#   next!(p)
-# end
-# df.track .= tracks
-#
-#
-#
-#
-# ratio = retrieve(conf, "proportion_of_shortest", "ratio", Float64)
-# temporalROI = round(Int, ratio*minimum(df.duration))
-#
-# @rtransform!(df, :cordlength = cordlength(:track, :duration, temporalROI), :curvelength = get_curvelength(:track, :duration, temporalROI))
-# @transform!(df, :tortuosity = :cordlength ./ :curvelength, :speed = :curvelength / temporalROI)
-#
-# select(df, Not(Cols(:track, :calibration))) |> CSV.write(joinpath(results, "data.csv"))
+# tracks = DataFrame((rownumber = parse(Int, first(splitext(basename(file)))), xyt = CSV.File(file)) for file in readdir("../results/tracks", join = true)) 
+# @rtransform!(tracks, :l = maximum(sqrt(xy.x^2 + xy.y^2) for xy in :xyt)) 
+# sort!(tracks, :l)
+# x = @rsubset(df, :rownumber ∈ tracks.rownumber[1:10])
+# select!(x, Cols(:file, :start, :stop, :rownumber))

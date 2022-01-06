@@ -15,15 +15,15 @@ tosecond(x::Time) = tosecond(x - Time(0))
 artifact_downloaded(x) = artifact_exists(artifact_hash(first(splitext(x)), "Artifacts.toml"))
 artjoin(x) = @artifact_str(joinpath(first(splitext(x)), x)) 
 
-function get_track(rownumber, file, start_time, stop_time, calibration)
+function get_track(rownumber, file, start_time, stop_time, calibration, guess)
 
   file = artjoin(file)
   t₀ = get_start_time(file)
   start_time = tosecond(start_time) + t₀
   stop_time = tosecond(stop_time) + t₀
 
-  debug = retrieve(conf, "videotrack", "debug", Bool)
-  t1, t2, spl, ar = track(file, start_time, file, stop_time; debug = debug ? joinpath(pwd(), string(rownumber)) : nothing)
+  debug = retrieve(conf, "videotrack", "debug", Bool) ? joinpath(pwd(), string(rownumber)) : nothing
+  t1, t2, spl, ar = track(file, start_time, file, stop_time; debug , guess)
 
   c = calibrate(calibration, SVector{2, Float64}(ar .* spl(t1)))
   fun(t) = SVector{2, Float64}(calibrate(calibration, SVector{2, Float64}(ar .* spl(t + t1))) .- c)

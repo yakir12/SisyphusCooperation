@@ -21,7 +21,6 @@ select!(df, Not(:rownumber))
 results = joinpath("..", "results")
 select(df, Not(Cols(:xyt))) |> CSV.write(joinpath(results, "data.csv"))
 
-
 # plotting
 
 fig = Figure()
@@ -57,6 +56,7 @@ end
 degree2vector(α) = [reverse(sincosd(α))...]
 g = groupby(df, ["species", "couple ID", "with female"])
 x = @combine(g, :accuracy = norm(mean(degree2vector.($"exit azimuth"))))
+CSV.write(joinpath(results, "accuracy.csv"), x)
 g = groupby(x, ["species", "couple ID"])
 x = @combine(g, :line = Ref(Point2{Float64}.($"with female", :accuracy)))
 for (k, x1) in pairs(groupby(x, :species))

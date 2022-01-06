@@ -3,7 +3,7 @@ using Dates, LinearAlgebra
 using Autotrack, VideoIO, CSV, QuadGK, Dierckx
 using GLMakie
 
-include(joinpath("..", "utils.jl"))
+include(joinpath("..", "track", "utils.jl"))
 
 t = 10
 w = 1440
